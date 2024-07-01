@@ -24,7 +24,7 @@ export default function App() {
   const todosCount = todos.filter((todo) => !todo.isCompleted).length;
 
   return (
-    <div className="min-h-screen w-full bg-[#FAFAFA] px-6 transition-colors ease-in md:flex md:items-center md:justify-center dark:bg-[#171823]">
+    <div className="min-h-screen w-full bg-[#FAFAFA] px-6 transition-colors ease-in md:flex md:items-center md:justify-center dark:bg-[#171823] font-display">
       <div className="mx-auto w-full max-w-xl py-10">
         <Header />
 
