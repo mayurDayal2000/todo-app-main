@@ -20,7 +20,7 @@ export function FilterActions({
             role="tab"
             aria-selected={activeFilter === filter}
             aria-controls={`${filter}-todos`}
-            className={`text-sm font-bold transition-colors ease-in hover:text-[#494C6B] dark:hover:text-[#E3E4F1] ${
+            className={`text-sm font-bold transit-colors hover:text-[#494C6B] dark:hover:text-[#E3E4F1] ${
               activeFilter === filter
                 ? "text-[#3A7CFD]"
                 : "text-[#9495A5] dark:text-[#5B5E7E]"

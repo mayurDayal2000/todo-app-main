@@ -24,8 +24,8 @@ export default function App() {
   const todosCount = todos.filter((todo) => !todo.isCompleted).length;
 
   return (
-    <div className="min-h-screen w-full bg-[#FAFAFA] px-6 transition-colors ease-in md:flex md:items-center md:justify-center dark:bg-[#171823] font-display">
-      <div className="mx-auto w-full max-w-xl py-10">
+    <div className="font-display bg-screen px-6 transit-colors">
+      <div className="mx-auto w-full max-w-xl py-10 md:py-20 lg:py-24">
         <Header />
 
         <main className="w-full">
@@ -36,7 +36,7 @@ export default function App() {
             onRemoveTodo={removeTodo}
           />
 
-          <section className="flex w-full items-center justify-between px-5 py-4">
+          <section className="flex w-full items-center justify-between rounded-b bg-white p-3 px-5 py-4 shadow-md transit-colors dark:bg-[#25273D]">
             <p className="text-xs text-[#9495A5] md:text-sm dark:text-[#5B5E7E]">
               {todosCount} items left
             </p>
@@ -57,7 +57,7 @@ export default function App() {
             </button>
           </section>
 
-          <nav className="mt-4 w-full rounded bg-white p-3 shadow-md transition-colors ease-in md:hidden dark:bg-[#25273D]">
+          <nav className="mt-4 w-full rounded bg-white p-3 shadow-md transit-colors ease-in md:hidden dark:bg-[#25273D]">
             <FilterActions
               activeFilter={activeFilter}
               onFilterChange={handleActiveFilter}

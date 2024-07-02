@@ -13,7 +13,7 @@ export function TodoItem({ todo, onToggle, onRemove }: TodoItemProps) {
   const checkboxId = useId();
 
   return (
-    <li className="flex w-full items-center justify-between border-b border-b-[#E3E4F1] px-5 py-4 transition-colors ease-in md:px-6 md:py-5 dark:border-b-[#393A4B]">
+    <li className="flex w-full items-center justify-between border-b border-b-[#E3E4F1] px-5 py-4 transit-colors md:px-6 md:py-5 dark:border-b-[#393A4B]">
       <label
         htmlFor={checkboxId}
         className="flex cursor-pointer select-none items-center gap-x-3 md:gap-x-4 lg:gap-x-6"
@@ -27,7 +27,7 @@ export function TodoItem({ todo, onToggle, onRemove }: TodoItemProps) {
         />
 
         <span
-          className={`flex h-5 w-5 items-center justify-center rounded-full border border-[#E3E4F1] transition-colors ease-in hover:border-[#55DDFF] md:h-6 md:w-6 dark:border-[#393A4B] ${
+          className={`flex h-5 w-5 items-center justify-center rounded-full border border-[#E3E4F1] transit-colors hover:border-[#55DDFF] md:h-6 md:w-6 dark:border-[#393A4B] ${
             todo.isCompleted
               ? "bg-gradient-to-br from-[#55DDFF] to-[#C058F3]"
               : "bg-transparent"
@@ -38,7 +38,7 @@ export function TodoItem({ todo, onToggle, onRemove }: TodoItemProps) {
         </span>
 
         <p
-          className={`text-xs transition-colors ease-in md:text-sm lg:text-base xl:text-lg ${
+          className={`text-xs transit-colors md:text-sm lg:text-base xl:text-lg ${
             todo.isCompleted
               ? "text-[#D1D2DA] line-through dark:text-[#4D5067]"
               : "text-[#494C6B] dark:text-[#C8CBE7]"

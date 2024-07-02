@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .bg-screen {
+    @apply bg-mobile-light lg:bg-desktop-light dark:bg-mobile-dark dark:lg:bg-desktop-dark min-h-screen w-full bg-[#FAFAFA] bg-[length:100%_210px] bg-no-repeat md:bg-[length:100%_270px] lg:bg-[length:100%_300px] dark:bg-[#171823];
+  }
+
+  .transit-colors {
+    @apply transition-colors duration-200 ease-in;
+  }
+}

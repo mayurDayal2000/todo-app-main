@@ -9,7 +9,7 @@ type TodoListProps = {
 
 export function TodoList({ todos, onToggleTodo, onRemoveTodo }: TodoListProps) {
   return (
-    <section className="mb-4 mt-4 w-full rounded bg-white shadow-md transition-colors ease-in dark:bg-[#25273D]">
+    <section className="mt-4 w-full rounded-t bg-white shadow-md transit-colors dark:bg-[#25273D]">
       <h2 className="sr-only">Todo List</h2>
 
       <ul role="list">
