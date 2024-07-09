@@ -2,6 +2,7 @@ import { useId } from "react";
 import { Todo } from "../hooks/useTodo";
 import checkIcon from "../assets/icons/icon-check.svg";
 import crossIcon from "../assets/icons/icon-cross.svg";
+import { Reorder } from "framer-motion";
 
 type TodoItemProps = {
   todo: Todo;
@@ -13,7 +14,14 @@ export function TodoItem({ todo, onToggle, onRemove }: TodoItemProps) {
   const checkboxId = useId();
 
   return (
-    <li className="flex w-full items-center justify-between border-b border-b-[#E3E4F1] px-5 py-4 transit-colors md:px-6 md:py-5 dark:border-b-[#393A4B]">
+    <Reorder.Item
+      value={todo}
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ x: -20, opacity: 0 }}
+      transition={{ type: "tween" }}
+      className="flex w-full items-center justify-between border-b border-b-[#E3E4F1] px-5 py-4 transit-colors md:px-6 md:py-5 dark:border-b-[#393A4B]"
+    >
       <label
         htmlFor={checkboxId}
         className="flex cursor-pointer select-none items-center gap-x-3 md:gap-x-4 lg:gap-x-6"
@@ -59,6 +67,6 @@ export function TodoItem({ todo, onToggle, onRemove }: TodoItemProps) {
           className="h-3 w-3 md:h-4 md:w-4 lg:h-[1.125rem] lg:w-[1.125rem]"
         />
       </button>
-    </li>
+    </Reorder.Item>
   );
 }

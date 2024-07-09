@@ -42,6 +42,7 @@ export function useTodo() {
     activeFilter,
     handleActiveFilter,
     todos,
+    setTodos,
     addTodo,
     toggleTodoCompletion,
     removeTodo,

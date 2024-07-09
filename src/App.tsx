@@ -8,6 +8,7 @@ export default function App() {
   const {
     activeFilter,
     todos,
+    setTodos,
     addTodo,
     toggleTodoCompletion,
     removeTodo,
@@ -21,7 +22,9 @@ export default function App() {
     return true;
   });
 
-  const todosCount = todos.filter((todo) => !todo.isCompleted).length;
+  const todosCount = todos.filter((todo) =>
+    activeFilter !== "completed" ? !todo.isCompleted : 0
+  ).length;
 
   return (
     <div className="font-display bg-screen px-6 transit-colors">
@@ -32,6 +35,7 @@ export default function App() {
           <TodoForm onSubmit={addTodo} />
           <TodoList
             todos={filteredTodos}
+            updateTodos={setTodos}
             onToggleTodo={toggleTodoCompletion}
             onRemoveTodo={removeTodo}
           />
@@ -63,6 +67,10 @@ export default function App() {
               onFilterChange={handleActiveFilter}
             />
           </nav>
+
+          <p className="mt-10 text-[#9495A5] dark:text-[#5B5E7E] text-center text-sm lg:text-base">
+            Drag and drop to reorder list
+          </p>
         </main>
       </div>
     </div>
