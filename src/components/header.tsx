@@ -3,9 +3,14 @@ import sunIcon from "../assets/icons/icon-sun.svg";
 import moonIcon from "../assets/icons/icon-moon.svg";
 
 export function Header() {
-  const [isDark, setIsDark] = useState<boolean>(false);
+  const [isDark, setIsDark] = useState<boolean>(() => {
+    const savedMode = localStorage.getItem("isDarkMode");
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
 
   useEffect(() => {
+    localStorage.setItem("isDarkMode", JSON.stringify(isDark));
+
     if (isDark) {
       document.documentElement.classList.add("dark");
     } else {

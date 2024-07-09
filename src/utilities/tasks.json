@@ -2,12 +2,12 @@
   {
     "id": 1,
     "text": "Complete online JavaScript course",
-    "isCompleted": true
+    "isCompleted": false
   },
   {
     "id": 2,
-    "text": "Jog around the park 3x",
-    "isCompleted": false
+    "text": "Watch Demon Slayer: Mugen Train movie",
+    "isCompleted": true
   },
   {
     "id": 3,
