@@ -40,7 +40,7 @@ export default function App() {
             onRemoveTodo={removeTodo}
           />
 
-          <section className="flex w-full items-center justify-between rounded-b bg-white p-3 px-5 py-4 shadow-md transit-colors dark:bg-[#25273D]">
+          <div className="flex w-full items-center justify-between rounded-b bg-white p-3 px-5 py-4 shadow-md transit-colors dark:bg-[#25273D]">
             <p className="text-xs text-[#9495A5] md:text-sm dark:text-[#5B5E7E]">
               {todosCount} items left
             </p>
@@ -59,7 +59,7 @@ export default function App() {
             >
               Clear Completed
             </button>
-          </section>
+          </div>
 
           <nav className="mt-4 w-full rounded bg-white p-3 shadow-md transit-colors ease-in md:hidden dark:bg-[#25273D]">
             <FilterActions

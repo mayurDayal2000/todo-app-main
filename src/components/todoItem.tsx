@@ -22,10 +22,7 @@ export function TodoItem({ todo, onToggle, onRemove }: TodoItemProps) {
       transition={{ type: "tween" }}
       className="flex w-full items-center justify-between border-b border-b-[#E3E4F1] px-5 py-4 transit-colors md:px-6 md:py-5 dark:border-b-[#393A4B]"
     >
-      <label
-        htmlFor={checkboxId}
-        className="flex cursor-pointer select-none items-center gap-x-3 md:gap-x-4 lg:gap-x-6"
-      >
+      <div className="cursor-pointer select-none">
         <input
           type="checkbox"
           id={checkboxId}
@@ -34,27 +31,32 @@ export function TodoItem({ todo, onToggle, onRemove }: TodoItemProps) {
           className="sr-only"
         />
 
-        <span
-          className={`flex h-5 w-5 items-center justify-center rounded-full border border-[#E3E4F1] transit-colors hover:border-[#55DDFF] md:h-6 md:w-6 dark:border-[#393A4B] ${
-            todo.isCompleted
-              ? "bg-gradient-to-br from-[#55DDFF] to-[#C058F3]"
-              : "bg-transparent"
-          } `}
-          aria-hidden="true"
+        <label
+          htmlFor={checkboxId}
+          className="flex items-center gap-x-3 md:gap-x-4 lg:gap-x-6"
         >
-          {todo.isCompleted && <img src={checkIcon} alt="check icon" />}
-        </span>
+          <span
+            className={`flex h-5 w-5 items-center justify-center rounded-full border border-[#E3E4F1] transit-colors hover:border-[#55DDFF] md:h-6 md:w-6 dark:border-[#393A4B] ${
+              todo.isCompleted
+                ? "bg-gradient-to-br from-[#a8b3b6] to-[#C058F3]"
+                : "bg-transparent"
+            } `}
+            aria-hidden="true"
+          >
+            {todo.isCompleted && <img src={checkIcon} alt="check icon" />}
+          </span>
 
-        <p
-          className={`text-xs transit-colors md:text-sm lg:text-base xl:text-lg ${
-            todo.isCompleted
-              ? "text-[#D1D2DA] line-through dark:text-[#4D5067]"
-              : "text-[#494C6B] dark:text-[#C8CBE7]"
-          }`}
-        >
-          {todo.text}
-        </p>
-      </label>
+          <span
+            className={`text-xs transit-colors md:text-sm lg:text-base xl:text-lg ${
+              todo.isCompleted
+                ? "text-[#D1D2DA] line-through dark:text-[#4D5067]"
+                : "text-[#494C6B] dark:text-[#C8CBE7]"
+            }`}
+          >
+            {todo.text}
+          </span>
+        </label>
+      </div>
 
       <button
         type="button"

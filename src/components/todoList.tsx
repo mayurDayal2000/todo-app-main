@@ -20,12 +20,7 @@ export function TodoList({
     <section className="mt-4 w-full rounded-t bg-white shadow-md transit-colors dark:bg-[#25273D]">
       <h2 className="sr-only">Todo List</h2>
 
-      <Reorder.Group
-        axis="y"
-        values={todos}
-        onReorder={updateTodos}
-        role="list"
-      >
+      <Reorder.Group axis="y" values={todos} onReorder={updateTodos}>
         <AnimatePresence>
           {todos.map((todo) => (
             <TodoItem
