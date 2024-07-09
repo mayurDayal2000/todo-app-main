@@ -68,10 +68,24 @@ export default function App() {
             />
           </nav>
 
-          <p className="mt-10 text-[#9495A5] dark:text-[#5B5E7E] text-center text-sm lg:text-base">
+          <p className="mt-10 text-center text-sm text-[#9495A5] lg:text-base dark:text-[#5B5E7E]">
             Drag and drop to reorder list
           </p>
         </main>
+
+        <footer className="mt-12">
+          <p className="text-center text-sm text-[#9495A5] lg:text-base dark:text-[#5B5E7E]">
+            Challenge by{" "}
+            <a
+              href="https://www.frontendmentor.io?ref=challenge"
+              target="_blank"
+              className="text-[#3A7CFD] underline"
+            >
+              Frontend Mentor
+            </a>
+            . Coded by <strong>Mayur Dayal</strong>.
+          </p>
+        </footer>
       </div>
     </div>
   );
