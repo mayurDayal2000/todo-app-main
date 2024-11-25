@@ -38,6 +38,7 @@ Users should be able to:
 - Dark mode: Toggle between light and dark themes for comfortable viewing.
 - Drag and drop: Reorder todo items using drag and drop functionality powered by Framer Motion.
 - Responsive design: Optimized layout for various screen sizes.
+- Responsive design: Optimized layout for various screen sizes.
 
 ## Links
 
