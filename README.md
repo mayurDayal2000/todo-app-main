@@ -18,6 +18,7 @@ Users should be able to:
 - Toggle light and dark mode
 - **Bonus**: Drag and drop to reorder items on the list
 - **Bonus**: Drag and drop to reorder items on the list
+- **Bonus**: Drag and drop to reorder items on the list
 
 
 ## Built with
