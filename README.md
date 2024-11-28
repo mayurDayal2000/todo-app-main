@@ -17,6 +17,9 @@ Users should be able to:
 - Clear all completed todos
 - Toggle light and dark mode
 - **Bonus**: Drag and drop to reorder items on the list
+- **Bonus**: Drag and drop to reorder items on the list
+- **Bonus**: Drag and drop to reorder items on the list
+
 
 ## Built with
 
@@ -37,6 +40,7 @@ Users should be able to:
 - Clear completed: Remove all completed todos at once.
 - Dark mode: Toggle between light and dark themes for comfortable viewing.
 - Drag and drop: Reorder todo items using drag and drop functionality powered by Framer Motion.
+- Responsive design: Optimized layout for various screen sizes.
 - Responsive design: Optimized layout for various screen sizes.
 
 ## Links
