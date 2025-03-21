@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import sampleTasks from "../utilities/tasks.json";
 
 export type FilterType = "all" | "active" | "completed";
@@ -30,34 +30,52 @@ export function useTodo() {
     }
   }, [todos]);
 
-  const handleActiveFilter = (action: FilterType) => {
+  const handleActiveFilter = useCallback((action: FilterType) => {
     setActiveFilter(action);
-  };
+  }, []);
 
-  const addTodo = (text: string) => {
-    setTodos([...todos, { id: Date.now(), text, isCompleted: false }]);
-  };
+  const addTodo = useCallback((text: string) => {
+    setTodos((prevTodos) => [
+      ...prevTodos,
+      { id: Date.now(), text, isCompleted: false },
+    ]);
+  }, []);
 
-  const toggleTodoCompletion = (id: number) => {
-    setTodos(
-      todos.map((todo) =>
+  const toggleTodoCompletion = useCallback((id: number) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
         todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
       )
     );
-  };
+  }, []);
 
-  const removeTodo = (id: number) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
-  };
+  const removeTodo = useCallback((id: number) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+  }, []);
 
-  const clearCompleted = () => {
-    setTodos(todos.filter((todo) => !todo.isCompleted));
-  };
+  const clearCompleted = useCallback(() => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => !todo.isCompleted));
+  }, []);
+
+  const filteredTodos = useMemo(() => {
+    return todos.filter((todo) => {
+      if (activeFilter === "active") return !todo.isCompleted;
+      if (activeFilter === "completed") return todo.isCompleted;
+      return true;
+    });
+  }, [todos, activeFilter]);
+
+  const activeTodosCount = useMemo(
+    () => todos.filter((todo) => !todo.isCompleted).length,
+    [todos]
+  );
 
   return {
     activeFilter,
     handleActiveFilter,
     todos,
+    filteredTodos,
+    activeTodosCount,
     setTodos,
     addTodo,
     toggleTodoCompletion,

@@ -7,6 +7,8 @@ import { useTodo } from "./hooks/useTodo";
 export default function App() {
   const {
     activeFilter,
+    filteredTodos,
+    activeTodosCount,
     todos,
     setTodos,
     addTodo,
@@ -15,16 +17,6 @@ export default function App() {
     handleActiveFilter,
     clearCompleted,
   } = useTodo();
-
-  const filteredTodos = todos.filter((todo) => {
-    if (activeFilter === "active") return !todo.isCompleted;
-    if (activeFilter === "completed") return todo.isCompleted;
-    return true;
-  });
-
-  const todosCount = todos.filter((todo) =>
-    activeFilter !== "completed" ? !todo.isCompleted : 0
-  ).length;
 
   return (
     <div className="font-display bg-screen px-6 transit-colors">
@@ -42,10 +34,11 @@ export default function App() {
 
           <div className="flex w-full items-center justify-between rounded-b bg-white p-3 px-5 py-4 shadow-md transit-colors dark:bg-[#25273D]">
             <p className="text-xs text-[#9495A5] md:text-sm dark:text-[#5B5E7E]">
-              {todosCount} items left
+              {activeTodosCount} {activeTodosCount === 1 ? "item" : "items"}{" "}
+              left
             </p>
 
-            <nav className="hidden md:block">
+            <nav className="hidden md:block" aria-label="Todo filters">
               <FilterActions
                 activeFilter={activeFilter}
                 onFilterChange={handleActiveFilter}
@@ -54,14 +47,18 @@ export default function App() {
 
             <button
               type="button"
-              className="text-xs text-[#9495A5] md:text-sm dark:text-[#5B5E7E] hover:text-[#494C6B] dark:hover:text-[#E3E4F1]"
+              className="text-xs text-[#9495A5] md:text-sm transition-colors dark:text-[#5B5E7E] hover:text-[#494C6B] dark:hover:text-[#E3E4F1]"
               onClick={clearCompleted}
+              aria-label="Clear all completed tasks"
             >
               Clear Completed
             </button>
           </div>
 
-          <nav className="mt-4 w-full rounded bg-white p-3 shadow-md transit-colors ease-in md:hidden dark:bg-[#25273D]">
+          <nav
+            className="mt-4 w-full rounded bg-white p-3 shadow-md transit-colors ease-in md:hidden dark:bg-[#25273D]"
+            aria-label="Todo filters (mobile)"
+          >
             <FilterActions
               activeFilter={activeFilter}
               onFilterChange={handleActiveFilter}
@@ -79,6 +76,7 @@ export default function App() {
             <a
               href="https://www.frontendmentor.io?ref=challenge"
               target="_blank"
+              rel="noopener noreferrer"
               className="text-[#3A7CFD] underline"
             >
               Frontend Mentor

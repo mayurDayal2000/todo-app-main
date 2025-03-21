@@ -19,8 +19,12 @@ export function TodoItem({ todo, onToggle, onRemove }: TodoItemProps) {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ x: -20, opacity: 0 }}
+      whileHover={{ scale: 1.005, backgroundColor: "rgba(0,0,0,0.01)" }}
+      whileDrag={{ scale: 1.02, backgroundColor: "rgba(0,0,0,0.03)" }}
       transition={{ type: "tween" }}
       className="flex w-full items-center justify-between border-b border-b-[#E3E4F1] px-5 py-4 transit-colors md:px-6 md:py-5 dark:border-b-[#393A4B]"
+      role="listitem"
+      aria-checked={todo.isCompleted}
     >
       <div className="cursor-pointer select-none">
         <input
@@ -29,6 +33,9 @@ export function TodoItem({ todo, onToggle, onRemove }: TodoItemProps) {
           checked={todo.isCompleted}
           onChange={onToggle}
           className="sr-only"
+          aria-label={`Mark "${todo.text}" as ${
+            todo.isCompleted ? "incomplete" : "complete"
+          }`}
         />
 
         <label
@@ -43,7 +50,7 @@ export function TodoItem({ todo, onToggle, onRemove }: TodoItemProps) {
             } `}
             aria-hidden="true"
           >
-            {todo.isCompleted && <img src={checkIcon} alt="check icon" />}
+            {todo.isCompleted && <img src={checkIcon} alt="" />}
           </span>
 
           <span
@@ -62,10 +69,12 @@ export function TodoItem({ todo, onToggle, onRemove }: TodoItemProps) {
         type="button"
         onClick={onRemove}
         aria-label={`Remove todo: ${todo.text}`}
+        className="opacity-70 hover:opacity-100 focus:opacity-100 focus:outline-none transition-opacity"
       >
         <img
           src={crossIcon}
-          alt="cross icon"
+          alt=""
+          aria-hidden="true"
           className="h-3 w-3 md:h-4 md:w-4 lg:h-[1.125rem] lg:w-[1.125rem]"
         />
       </button>
