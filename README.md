@@ -21,23 +21,26 @@ Users should be able to:
 ## Built with
 
 - Semantic HTML5 markup
+- CSS custom properties
 - Flexbox
 - Mobile-first workflow
 - [React](https://react.dev/) - JS library
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
 - [TailwindCSS](https://tailwindcss.com/) - utility-first CSS framework
 - [Framer Motion](https://www.framer.com/motion/) - Animation library for React
-- [TypeScript](https://www.typescriptlang.org/)
+  
 
 ## Features
 
-- Add new todos: Users can add new todo items using the input field.
-- Toggle completion: Mark todos as complete or active with a simple click.
-- Remove todos: Delete unwanted todo items from the list.
-- Filter todos: View all todos, only active ones, or only completed ones.
-- Clear completed: Remove all completed todos at once.
-- Dark mode: Toggle between light and dark themes for comfortable viewing.
-- Drag and drop: Reorder todo items using drag and drop functionality powered by Framer Motion.
-- Responsive design: Optimized layout for various screen sizes.
+- **Add new todos**: Create new todo items using the input field
+- **Toggle completion**: Mark todos as complete or active with a simple click
+- **Remove todos**: Delete unwanted todo items from the list
+- **Filter todos**: View all todos, only active ones, or only completed ones
+- **Clear completed**: Remove all completed todos at once
+- **Dark mode**: Toggle between light and dark themes for comfortable viewing
+- **Drag and drop**: Reorder todo items using drag and drop functionality
+- **Responsive design**: Optimized layout for various screen sizes
+- **Local storage**: Todos are saved in browser's local storage
 
 ## Links
 
