@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { FilterType } from "../hooks/useTodo";
+import { FilterType } from "../types";
 
 type FilterActionsProps = {
   activeFilter: FilterType;
@@ -24,7 +24,7 @@ export const FilterActions = memo(function FilterActions({
           type="button"
           role="radio"
           aria-checked={activeFilter === filter}
-          className={`text-sm font-bold transit-colors hover:text-[#494C6B] dark:hover:text-[#E3E4F1] focus:outline-none focus:underline ${
+          className={`text-sm font-bold transition-colors duration-200 hover:text-[#494C6B] dark:hover:text-[#E3E4F1] focus:outline-none focus-visible:underline ${
             activeFilter === filter
               ? "text-[#3A7CFD]"
               : "text-[#9495A5] dark:text-[#5B5E7E]"

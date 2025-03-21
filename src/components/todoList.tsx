@@ -1,5 +1,5 @@
 import { AnimatePresence, Reorder } from "framer-motion";
-import { Todo } from "../hooks/useTodo";
+import { Todo } from "../types";
 import { TodoItem } from "./todoItem";
 import { Dispatch, memo } from "react";
 
@@ -17,7 +17,7 @@ export const TodoList = memo(function TodoList({
   onRemoveTodo,
 }: TodoListProps) {
   return (
-    <section className="mt-4 w-full rounded-t bg-white shadow-md transit-colors dark:bg-[#25273D]">
+    <section className="mt-4 w-full rounded-t bg-white shadow-md transition-colors dark:bg-[#25273D]">
       <h2 className="sr-only">Todo List</h2>
 
       {todos.length === 0 ? (

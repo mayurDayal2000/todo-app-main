@@ -19,7 +19,7 @@ export default function App() {
   } = useTodo();
 
   return (
-    <div className="font-display bg-screen px-6 transit-colors">
+    <div className="font-display bg-screen px-6 transition-colors">
       <div className="mx-auto w-full max-w-xl py-10 md:py-20 lg:py-24">
         <Header />
 
@@ -32,7 +32,7 @@ export default function App() {
             onRemoveTodo={removeTodo}
           />
 
-          <div className="flex w-full items-center justify-between rounded-b bg-white p-3 px-5 py-4 shadow-md transit-colors dark:bg-[#25273D]">
+          <div className="flex w-full items-center justify-between rounded-b bg-white p-3 px-5 py-4 shadow-md transition-colors dark:bg-[#25273D]">
             <p className="text-xs text-[#9495A5] md:text-sm dark:text-[#5B5E7E]">
               {activeTodosCount} {activeTodosCount === 1 ? "item" : "items"}{" "}
               left
@@ -56,7 +56,7 @@ export default function App() {
           </div>
 
           <nav
-            className="mt-4 w-full rounded bg-white p-3 shadow-md transit-colors ease-in md:hidden dark:bg-[#25273D]"
+            className="mt-4 w-full rounded bg-white p-3 shadow-md transition-colors ease-in md:hidden dark:bg-[#25273D]"
             aria-label="Todo filters (mobile)"
           >
             <FilterActions

@@ -1,13 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { FilterType, Todo } from "../types";
 import sampleTasks from "../utilities/tasks.json";
-
-export type FilterType = "all" | "active" | "completed";
-
-export type Todo = {
-  id: number;
-  text: string;
-  isCompleted: boolean;
-};
 
 export function useTodo() {
   const [activeFilter, setActiveFilter] = useState<FilterType>("all");
