@@ -66,7 +66,6 @@ export function useTodo() {
   return {
     activeFilter,
     handleActiveFilter,
-    todos,
     filteredTodos,
     activeTodosCount,
     setTodos,

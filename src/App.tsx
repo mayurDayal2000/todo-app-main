@@ -9,7 +9,6 @@ export default function App() {
     activeFilter,
     filteredTodos,
     activeTodosCount,
-    todos,
     setTodos,
     addTodo,
     toggleTodoCompletion,
