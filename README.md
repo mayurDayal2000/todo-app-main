@@ -45,4 +45,4 @@ Users should be able to:
 ## Links
 
 - [Solution URL here](https://github.com/mayurDayal2000/todo-app-main)
-- [Live Site URL here](https://mayurdayal2000-todo-app-main.netlify.app/)
+- [Live Site URL here](https://mayurdayal2000.github.io/todo-app-main/)
